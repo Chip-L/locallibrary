@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  h1= title
+
+  //- I removed the required from most of these fields so that I can use the validation done by the middleware
+
+  //- p Authors: #{authors}
+  //- p Book Authors: #{book.author}
+  //- p Genres: #{genres}
+
+  form(method='POST' action='')
+    div.form-group
+      label(for='title') Title:
+      input#title.form-control(type='text', placeholder='Name of book' name='title' required='true' value=(!book ? '' : book.title) )
+    div.form-group
+      label(for='author') Author:
+      select#author.form-control(type='select', placeholder='Select author' name='author' multiple='true' )
+        //- put sort back in the DB - where it belongs 
+        //- - authors.sort(function(a, b) {let textA = a.family_name.toUpperCase(); let textB = b.family_name.toUpperCase(); return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;});
+        for author in authors
+          //- if book
+          //-   option(value=author._id selected=(author._id.toString()===book.author.toString() ? 'selected' : false) ) #{author.name}
+          //- else          
+          //-   option(value=author._id) #{author.name}
+          option(value=author._id selected=author.selected ) #{author.name}
+    div.form-group
+      label(for='summary') Summary:
+      textarea#summary.form-control(type='textarea', placeholder='Summary' name='summary' ) #{!book ? '' : book.summary}
+    div.form-group
+      label(for='isbn') ISBN:
+      input#isbn.form-control(type='text', placeholder='ISBN13' name='isbn' value=(!book ? '' : book.isbn) )
+    div.form-group
+      label Genre:
+      div
+        for genre in genres
+          div(style='display: inline; padding-right:10px;')
+            input.checkbox-input(type='checkbox', name='genre', id=genre._id, value=genre._id, checked=genre.checked )
+            label(for=genre._id).p-1 #{genre.name}
+    button.btn.btn-primary(type='submit') Submit
+
+  if errors
+    ul
+      for error in errors
+        li!= error.msg
