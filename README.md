@@ -17,7 +17,7 @@ I wanted to learn more about setting up the Express server and how they configur
 
 AS A book lover
 
-I WANT a collection of books
+I WANT a catalog of books
 
 SO THAT I can keep track of what books I have
 
@@ -28,6 +28,10 @@ SO THAT I can keep track of what books I have
 `npm run start` -- starts the individual server
 
 `npm run devstart` -- starts the server with nodemon
+
+Be sure to set up a `.env` file with the following variables:
+
+- `MONGODB` -- te connection string to your database
 
 ## Technologies
 
