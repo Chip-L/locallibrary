@@ -1,4 +1,4 @@
-"# Chips Library
+# Chips Library
 
 ## Description
 
@@ -37,4 +37,4 @@ SO THAT I can keep track of what books I have
 - mongoose
 - bcrypt
 - async
-- luxon"
+- luxon
