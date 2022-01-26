@@ -9,7 +9,6 @@ I wanted to learn more about setting up the Express server and how they configur
 ## Table of Contents
 
 - [User Story](#user-story)
-- [Acceptance Criteria](#acceptance-criteria)
 - [Usage](#usage)
 - [Technologies](#technologies)
 
@@ -20,8 +19,6 @@ AS A book lover
 I WANT a catalog of books
 
 SO THAT I can keep track of what books I have
-
-## Acceptance Criteria
 
 ## Usage
 
@@ -35,10 +32,10 @@ Be sure to set up a `.env` file with the following variables:
 
 ## Technologies
 
-- [Express](https://www.npmjs.com/package/express)
-- [PUG](https://pugjs.org/api/getting-started.html)
-- express validator
-- mongoose
-- bcrypt
-- async
-- luxon
+- [Express](https://www.npmjs.com/package/express) (server, routing, and middleware)
+- [pug](https://pugjs.org/api/getting-started.html) (page display)
+- [mongoose](https://mongoosejs.com/) (MongoDB Database ORM)
+- [express validator](https://express-validator.github.io/docs/) (validation on routes)
+- [async](https://www.npmjs.com/package/async) (mostly just parallel to pull promises all at once)
+- [luxon](https://moment.github.io/luxon/) (date time manipulation)
+- [bcrypt](https://www.npmjs.com/package/bcrypt) (password hashing)
